@@ -63,6 +63,13 @@ public class articleService {
         return allArticleCatalogs;
     }
 
+//    根据题目关键词查找文章信息
+    public  List allArticleByKey(String key){
+        articleDao articleDao = new articleDao();
+        List articlesList = articleDao.allArticlesByKey(key);
+        return articlesList;
+    }
+
     //    更新文章信息
     public int updateArticle(Article article) {
         articleDao articleDao = new articleDao();

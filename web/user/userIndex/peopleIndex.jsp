@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 String path = request.getContextPath();
@@ -29,11 +30,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <%-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--%>
                 </div>
                 <ul class="list-group list-group-flush">
-
-                    <li class="list-group-item"><a href="AllPersonInfoServlet">管理用户</a></li>
+                    <c:if test="${status == 'admin'}">
+                        <li class="list-group-item"><a href="AllPersonInfoServlet">管理用户</a></li>
+                    </c:if>
 
                     <li class="list-group-item"><a href="personalInfoServlet">个人资料</a></li>
-                    <li class="list-group-item"><a href="AllArticleCatalogsServlet">文章广场</a></li>
+                    <li class="list-group-item"><a href="AllArticleCatalogsServlet?status=${status}">文章广场</a></li>
                     <li class="list-group-item"><a href="ArticleCatalogServlet">文章目录</a></li>
                     <li class="list-group-item"><a href="addArticleServlet">发表文章</a></li>
                     <li class="list-group-item"><a href="index" style="text-decoration: none;color: black">退出</a>

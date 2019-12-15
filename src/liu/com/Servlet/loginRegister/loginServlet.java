@@ -30,18 +30,23 @@ public class loginServlet extends HttpServlet {
         userService userservice = new userService();
 
         if (userservice.getUserByUserName(userName).getPassword().equals(password)) {
-            if (userservice.getUserByUserName(userName).getStatus().equals("normal")) {
+            String status = userservice.getUserByUserName(userName).getStatus();
+            HttpSession hs = request.getSession();
+            if (!status.equals("disable")) {
                 //            userservice.login(userName, password)
                 //没有用request进行转向,想的是转到主页面就改下url
                 //request.getRequestDispatcher("/peopleIndexServlet").forward(request,response);
                 //        在一個session會話里储存名字
-                HttpSession hs = request.getSession();
+
                 hs.setAttribute("userName", userName);
                 String id = userservice.getUserByUserName(userName).getUserid();
                 hs.setAttribute("userId", id);
 //
+                hs.setAttribute("status",status);
+
+//
                 response.sendRedirect("main");
-            } else if (userservice.getUserByUserName(userName).getStatus().equals("disable")) {
+            } else {
                 errorMsg = "该账号已被封禁，请联系网站管理员";
                 request.setAttribute("user", user);
                 request.setAttribute("errorMsg", errorMsg);

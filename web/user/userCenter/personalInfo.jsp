@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <input type="text" readonly class="form-control" id="tel" name="tel" value="${user.tel}">
                 </div>
             </div>
-            <c:if test="${status eq null}">
+            <c:if test="${status !='thevistor'}">
             <div class="form-group row">
                 <label for="Password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
