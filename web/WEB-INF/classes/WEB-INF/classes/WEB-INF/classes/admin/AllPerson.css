@@ -1,7 +1,0 @@
-.operate{
-    border: 1px solid red;
-}
-.operate>div:nth-child(all){
-    border: 1px solid red;
-    background: grey;
-}
