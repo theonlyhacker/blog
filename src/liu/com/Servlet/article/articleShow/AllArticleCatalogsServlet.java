@@ -30,7 +30,7 @@ public class AllArticleCatalogsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String status = request.getParameter("status");
-        if(status.equals("youke")){
+        if(null != status && status.equals("youke")){
             request.setAttribute("status",status);
         }
         articleService articleService = new articleService();

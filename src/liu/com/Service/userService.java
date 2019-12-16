@@ -30,6 +30,13 @@ public class userService {
         return dao.findByUserInfo(userName);
     }
 
+//  添加用户之前先看看是否存在该用户
+    public  boolean isExistUser(String userName){
+        userDao userDao = new userDao();
+        boolean exist = userDao.exist(userName);
+        return exist;
+    }
+
 //    更新用户信息
     public User update(User user){
         userDao userDao = new userDao();

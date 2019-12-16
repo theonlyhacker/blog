@@ -14,6 +14,9 @@ public interface userDaoApi {
     //查找用户信息
     User findByUserInfo(String username);
 
+    //    添加用户之前先判断是否存在该用户名
+    public boolean exist(String userName);
+
     //查找所有用户信息
     List<User> findAllUsers();
 

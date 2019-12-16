@@ -122,6 +122,36 @@ public class userDao implements userDaoApi {
     }
 
     @Override
+    public boolean exist(String userName) {
+        User user = new User();
+//
+        try {
+//            打開數據庫連接
+            cn = db.open();
+//
+            String sql = "select * from blog.users where usersName = ?";
+//            預處理sql語句
+            st = cn.prepareStatement(sql);
+//           插入數據
+            st.setString(1, userName);
+//            執行語句
+            rs = st.executeQuery();
+//
+            if (rs.next()) {
+                return true;
+            }
+
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(cn, st, rs);
+        }
+        return false;
+    }
+
+    @Override
     public List<User> findAllUsers() {
         try {
             cn = db.open();

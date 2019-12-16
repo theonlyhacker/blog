@@ -229,11 +229,13 @@
             },
             success: function (data) {
                 if (data) {
-                    alert("添加成功")
+                    var str = JSON.stringify(data);
+                    str = eval('(' + str + ')');
+                    alert(str);
                 }
             },
             error: function () {
-                alert("添加出现意外，具体看后台日志");
+                alert("用户名不能重复!!!!");
             }
         })
     }

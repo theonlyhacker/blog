@@ -9,6 +9,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>注册成功</title>
 </head>
 <body>
-<a href="login"><h3 style="color: red">注册成功,点击进行登录</h3></a>
+<a href="index"><h3 style="color: red">注册成功,点击进行登录</h3></a>
 </body>
 </html>

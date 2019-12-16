@@ -86,8 +86,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1" style="height: 38">用户名:</span><%--<span style="color: red">*</span>--%>
         </div>
-        <input type="text" class="userinput" name="userName" id="" onmousemove="helpUserInfo(this)"
+        <input type="text" class="userinput" name="userName" id="" onmousemove="helpUserInfo(this)" value="${userName}"
                onmouseout="norUserhelp(this)"><span id="namehelp" style="color: #5a6268">*请输入用户名在4~10个字符之间!</span>
+        <span style="color: red">${errorMsg}</span>
     </div>
 
     <div style="margin-left: 42%;height: 38" class="input-group mb-3">
