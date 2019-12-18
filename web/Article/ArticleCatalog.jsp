@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </tr>
         <c:forEach var="article" items="${list}" varStatus="sta">
             <tr class="text-right" style="" id="hanggao">
-                <td><a href="ArticleInfoServlet?id=${article.id}">${article.title}</a></td>
+                <td><a href="ArticleInfoServlet?id=${article.id}&status=${status}">${article.title}</a></td>
                 <td>${article.type}</td>
                 <%--这里先全部写成已发布的状态，等以后写出保存等功能的时候再修改 2019.12.6--%>
                 <td>已发布</td>

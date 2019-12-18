@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 String path = request.getContextPath();
@@ -18,10 +19,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <label for="Ariticleclass">文章类型:</label>
             <select class="form-control" id="Ariticleclass" name="articleType" style="width: 200">
                 <option aria-checked="true" value="${article.type}">${article.type}</option>
-                <option value="军事">军事</option>
+                <c:forEach var="list" items="${ArticleType}" varStatus="sta">
+                    <option value="${list.typeContent}">${list.typeContent}</option>
+                </c:forEach>
+                <%--<option value="军事">军事</option>
                 <option value="文化">文化</option>
                 <option value="历史">历史</option>
-                <option value="杂谈">杂谈</option>
+                <option value="杂谈">杂谈</option>--%>
             </select>
         </div>
         <div class="form-group">

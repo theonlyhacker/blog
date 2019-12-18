@@ -3,12 +3,14 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>addArticle</title>
     <link href="static/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="static/jquery/jquery-3.4.1.min.js"></script>
+    <script src="static/bootstrap/bootstrap.js"></script>
     <script>
         $(function () {
             $("#writeAriticleForm").submit(function () {
@@ -33,11 +35,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="form-group">
             <label for="Ariticleclass">文章类型:</label>
             <select class="form-control" id="Ariticleclass" name="articleType" style="width: 200">
-                <option aria-checked="true" value="科技">科技</option>
+                <c:forEach items="${ArticleType}" var="list" varStatus="sta">
+                    <option value="${list.typeContent}">${list.typeContent}</option>
+                </c:forEach>
+
+                <%--<option aria-checked="true" value="科技">科技</option>
                 <option value="军事">军事</option>
                 <option value="文化">文化</option>
                 <option value="历史">历史</option>
-                <option value="杂谈">杂谈</option>
+                <option value="杂谈">杂谈</option>--%>
             </select>
         </div>
         <div class="form-group">

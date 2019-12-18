@@ -2,6 +2,7 @@ package liu.com.Service;
 
 import liu.com.Dao.articleDao;
 import liu.com.Entity.Article;
+import liu.com.Entity.ArticleType;
 import liu.com.Entity.Reviews;
 
 import java.util.List;
@@ -12,6 +13,28 @@ public class articleService {
         articleDao articleDao = new articleDao();
         Article article1 = articleDao.addArticle(article);
         return article1;
+    }
+
+    //  添加文章类型
+    public boolean addType(ArticleType articleType) {
+        boolean success;
+        articleDao articleDao = new articleDao();
+        success = articleDao.addType(articleType);
+        return success;
+    }
+
+    //  删除文章类型
+    public  int delArticleType(String typeId){
+        articleDao a  = new articleDao();
+        int ret = a.delArticleType(typeId);
+        return ret;
+    }
+
+    //    查找用户的所有文章类型
+    public List<ArticleType> findTypeList(String userId) {
+        articleDao articleDao = new articleDao();
+        List<ArticleType> list = articleDao.findTypeList(userId);
+        return list;
     }
 
     //删除文章
@@ -63,8 +86,8 @@ public class articleService {
         return allArticleCatalogs;
     }
 
-//    根据题目关键词查找文章信息
-    public  List allArticleByKey(String key){
+    //    根据题目关键词查找文章信息
+    public List allArticleByKey(String key) {
         articleDao articleDao = new articleDao();
         List articlesList = articleDao.allArticlesByKey(key);
         return articlesList;

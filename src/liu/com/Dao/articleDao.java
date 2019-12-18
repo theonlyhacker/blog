@@ -1,6 +1,7 @@
 package liu.com.Dao;
 
 import liu.com.Entity.Article;
+import liu.com.Entity.ArticleType;
 import liu.com.Entity.Reviews;
 import liu.com.common.dbObject;
 import liu.com.common.generateID;
@@ -50,6 +51,89 @@ public class articleDao implements articleDaoApi {
 
         }
         return article;
+    }
+
+    @Override
+    public boolean addType(ArticleType articleType) {
+        boolean success = true;
+        try {
+            cn = db.open();
+
+            String sql1 = "insert into blog.articletype(Idarticletype, userId, typeContent, registerDate) values (?,?,?,?)";
+//
+            st = cn.prepareStatement(sql1);
+//
+//            给文章添加id属性
+            articleType.setId(id.getUUid());
+//          给文章添加生成时间
+            articleType.setRegisterDate(id.date());
+//
+            st.setString(1, articleType.getId());
+            st.setString(2, articleType.getUserId());
+            st.setString(3, articleType.getTypeContent());
+            st.setString(4, articleType.getRegisterDate());
+//
+            success = st.execute();
+        } catch (SQLException se) {
+            // 处理 JDBC 错误
+            se.printStackTrace();
+        } finally {
+        }
+        return success;
+    }
+
+    @Override
+    public List<ArticleType> findTypeList(String userId) {
+        List<ArticleType> typeList = new ArrayList();
+        try {
+            cn = db.open();
+            String sql = "select * from articletype where userId = ?";
+            st = cn.prepareStatement(sql);
+            st.setString(1,userId);
+            rs = st.executeQuery();
+//
+            while (rs.next()){
+                String typeId = rs.getString("idarticletype");
+                String idUser = rs.getString("userId");
+                String typeContent = rs.getString("typeContent");
+                String date = rs.getString("registerDate");
+//
+                ArticleType articleType = new ArticleType();
+//
+                articleType.setId(typeId);
+                articleType.setUserId(idUser);
+                articleType.setTypeContent(typeContent);
+                articleType.setRegisterDate(date);
+//
+                typeList.add(articleType);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+        }
+        return typeList;
+    }
+
+    @Override
+    public int delArticleType(String typeId) {
+        int ret = 0;
+        try {
+            cn = db.open();
+
+            String sql = "delete from articletype where idarticletype=?;";
+
+            st = cn.prepareStatement(sql);
+
+            st.setString(1, typeId);
+
+            ret = st.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+
+        }
+        return ret;
     }
 
     @Override

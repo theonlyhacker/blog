@@ -35,6 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </c:if>
 
                     <li class="list-group-item"><a href="personalInfoServlet">个人资料</a></li>
+                    <li class="list-group-item"><a href="ArticleTypeServlet">类型管理</a></li>
                     <li class="list-group-item"><a href="AllArticleCatalogsServlet?status=${status}">文章广场</a></li>
                     <li class="list-group-item"><a href="ArticleCatalogServlet">文章目录</a></li>
                     <li class="list-group-item"><a href="addArticleServlet">发表文章</a></li>
