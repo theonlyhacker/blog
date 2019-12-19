@@ -42,7 +42,7 @@ public class loginServlet extends HttpServlet {
                 String id = userservice.getUserByUserName(userName).getUserid();
                 hs.setAttribute("userId", id);
 //
-                hs.setAttribute("status",status);
+                hs.setAttribute("status", status);
 
 //
                 response.sendRedirect("main");

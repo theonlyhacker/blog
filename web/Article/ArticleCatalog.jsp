@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -55,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <tr class="text-right" style="" id="hanggao">
                 <td><a href="ArticleInfoServlet?id=${article.id}&status=${status}">${article.title}</a></td>
                 <td>${article.type}</td>
-                <%--这里先全部写成已发布的状态，等以后写出保存等功能的时候再修改 2019.12.6--%>
+                    <%--这里先全部写成已发布的状态，等以后写出保存等功能的时候再修改 2019.12.6--%>
                 <td>已发布</td>
                 <td>${article.datetime}</td>
                 <td>

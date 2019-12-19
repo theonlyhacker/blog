@@ -20,8 +20,8 @@ public class exchangePersonalInfoServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
 //        这里先补酒一下，用户自己修改信息从session里取userName,而管理员是直接传一个userName过来,
 //        看了下用户自己修改信息的jsp页面，我没搞懂我以前为啥userName不直接从form里取？
-        String userName =request.getParameter("userName");
-        if(userName.equals("")){
+        String userName = request.getParameter("userName");
+        if (userName.equals("")) {
             userName = (String) request.getSession().getAttribute("userName");
         }
         String sex = request.getParameter("sex");
@@ -30,7 +30,7 @@ public class exchangePersonalInfoServlet extends HttpServlet {
         String status = request.getParameter("status");
 //当用户自己修改信息的时候，没有状态的修改
         String status1 = "";
-        if(status == null){
+        if (status == null) {
             status = "normal";
             status1 = "1";
         }
@@ -45,17 +45,16 @@ public class exchangePersonalInfoServlet extends HttpServlet {
         userService userService = new userService();
 
         User newuser = userService.update(user);
-        if(status1.equals("")){
+        if (status1.equals("")) {
 //            request.getRequestDispatcher("admin/AllPersonCatalog.jsp").forward(request,response);
             response.sendRedirect("AllPersonInfoServlet");
             return;
-    }
+        }
 //        还是不能满足及时插入，待解决，即这行代码会延迟执行。已解决，原来是dao层代码写错了，在finally里直接返回null了
         if (newuser != null) {
             request.setAttribute("user", newuser);
             request.getRequestDispatcher("user/userIndex/peopleIndex.jsp").forward(request, response);
-        }
-        else {
+        } else {
             request.setAttribute("user", user);
             request.getRequestDispatcher("loginRegister/login.jsp").forward(request, response);
         }

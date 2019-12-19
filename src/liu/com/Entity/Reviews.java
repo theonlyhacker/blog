@@ -11,7 +11,7 @@ public class Reviews {
     private String reviewContent;//评论内容
     private String reviewDate;//评论时间
 
-    public Reviews(){
+    public Reviews() {
     }
 
     public String getReviewId() {

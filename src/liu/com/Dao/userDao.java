@@ -68,7 +68,7 @@ public class userDao implements userDaoApi {
             st.setString(1, user.getPassword());
             st.setString(2, user.getTel());
             st.setString(3, user.getSex());
-            st.setString(4,user.getStatus());
+            st.setString(4, user.getStatus());
             st.setString(5, user.getUsername());
 //            執行語句
 //            rs = st.executeQuery();
@@ -187,14 +187,14 @@ public class userDao implements userDaoApi {
     }
 
     @Override
-    public int prohibitUser(String id,String status) {
-        int i=0;
-        try{
+    public int prohibitUser(String id, String status) {
+        int i = 0;
+        try {
             cn = db.open();
             String sql = "update users u set u.status=? where u.id_Users=?";
             st = cn.prepareStatement(sql);
-            st.setString(1,status);
-            st.setString(2,id);
+            st.setString(1, status);
+            st.setString(2, id);
             i = st.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

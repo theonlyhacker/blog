@@ -11,8 +11,8 @@ public class generateID {
         return uuidstr;
     }
 
-    public String date(){
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public String date() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         String sdftime = sdf.format(date);
         return sdftime;

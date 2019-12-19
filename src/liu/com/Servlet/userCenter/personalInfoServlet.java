@@ -29,16 +29,16 @@ public class personalInfoServlet extends HttpServlet {
         String userId = (String) hs.getAttribute("userId");
 //        来自其他用户eg评论里查看用户信息
         String userId2 = request.getParameter("userId");
-        if(userId2!=null){
+        if (userId2 != null) {
             userId = userId2;
             request.setAttribute("status", "thevistor");
         }
         userService userservice = new userService();
         String Id = request.getParameter("Id");
-        if(Id!=null){
+        if (Id != null) {
             User user = userservice.getUserByUserName(Id);
             Gson gson = new Gson();
-            String UserArray = gson.toJson(user,user.getClass());
+            String UserArray = gson.toJson(user, user.getClass());
 //
             PrintWriter out = response.getWriter();
             out.write(UserArray);

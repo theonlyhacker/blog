@@ -12,9 +12,9 @@
     <link href="static/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="static/jquery/jquery-3.4.1.min.js"></script>
     <script src="static/bootstrap/bootstrap.js"></script>
-<%--    <link href="Article/article.css" rel="stylesheet" type="text/css">--%>
+    <%--    <link href="Article/article.css" rel="stylesheet" type="text/css">--%>
     <style>
-        #ArticleType{
+        #ArticleType {
             display: none;
             position: absolute;
             top: 25%;
@@ -23,7 +23,7 @@
             height: auto;
             padding: 10px;
             border: 5px solid gray;
-            background-color:#b3d7ff;
+            background-color: #b3d7ff;
             z-index: 1002;
             overflow: auto;
             text-align: center !important;
@@ -38,8 +38,9 @@
     <div>
         <c:forEach items="${ArticleType}" var="list" varStatus="sta">
             <li class="list-group-item">${list.typeContent}
-                <button type="button" class="btn btn-outline-secondary" style="line-height: 1;padding: 0.23rem 0.5rem"><a
-                        href="delArticleServlet?typeId=${list.id}" style="text-decoration: none;color: red">删除</a>
+                <button type="button" class="btn btn-outline-secondary" style="line-height: 1;padding: 0.23rem 0.5rem">
+                    <a
+                            href="delArticleServlet?typeId=${list.id}" style="text-decoration: none;color: red">删除</a>
                 </button>
             </li>
         </c:forEach>
@@ -51,7 +52,9 @@
         <button type="button" class="btn btn-outline-secondary canCle">取消</button>
     </div>
     <button type="button" class="btn btn-outline-secondary addType">添加类型</button>
-    <button type="button" class="btn btn-outline-secondary"><a href="main" style="text-decoration: none;color: #5a6268;">返回</a></button>
+    <button type="button" class="btn btn-outline-secondary"><a href="main"
+                                                               style="text-decoration: none;color: #5a6268;">返回</a>
+    </button>
 </form>
 
 <script>

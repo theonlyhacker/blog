@@ -89,10 +89,10 @@ public class articleDao implements articleDaoApi {
             cn = db.open();
             String sql = "select * from articletype where userId = ?";
             st = cn.prepareStatement(sql);
-            st.setString(1,userId);
+            st.setString(1, userId);
             rs = st.executeQuery();
 //
-            while (rs.next()){
+            while (rs.next()) {
                 String typeId = rs.getString("idarticletype");
                 String idUser = rs.getString("userId");
                 String typeContent = rs.getString("typeContent");
@@ -107,9 +107,9 @@ public class articleDao implements articleDaoApi {
 //
                 typeList.add(articleType);
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
         }
         return typeList;
     }
@@ -415,9 +415,9 @@ public class articleDao implements articleDaoApi {
 
             st = cn.prepareStatement(sql);
 //            String key1 ="%"+key+"%";
-            st.setString(1,"%"+key+"%");
-            st.setString(2,"%"+key+"%");
-            st.setString(3,"%"+key+"%");
+            st.setString(1, "%" + key + "%");
+            st.setString(2, "%" + key + "%");
+            st.setString(3, "%" + key + "%");
 
             rs = st.executeQuery();
 //

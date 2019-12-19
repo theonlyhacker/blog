@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "logOutFilter",urlPatterns = "/index")
+@WebFilter(filterName = "logOutFilter", urlPatterns = "/index")
 public class logOutFilter implements Filter {
     public void destroy() {
     }

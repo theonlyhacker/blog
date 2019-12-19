@@ -24,8 +24,8 @@ public class articleService {
     }
 
     //  删除文章类型
-    public  int delArticleType(String typeId){
-        articleDao a  = new articleDao();
+    public int delArticleType(String typeId) {
+        articleDao a = new articleDao();
         int ret = a.delArticleType(typeId);
         return ret;
     }

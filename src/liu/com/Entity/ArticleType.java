@@ -6,7 +6,7 @@ public class ArticleType {
     private String typeContent;//文章类型名
     private String registerDate;//注册时间
 
-    public ArticleType(){
+    public ArticleType() {
     }
 
     public String getId() {

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "ArticleTypeServlet",urlPatterns = "/ArticleTypeServlet")
+@WebServlet(name = "ArticleTypeServlet", urlPatterns = "/ArticleTypeServlet")
 public class ArticleTypeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
@@ -24,21 +24,20 @@ public class ArticleTypeServlet extends HttpServlet {
 
         articleService articleService = new articleService();
 //
-        if(articleService.addType(articleType)){
-            request.getRequestDispatcher("user/userIndex/peopleIndex.jsp").forward(request,response);
-        }
-        else
-            request.getRequestDispatcher("user/userIndex/peopleIndex.jsp").forward(request,response);
+        if (articleService.addType(articleType)) {
+            request.getRequestDispatcher("user/userIndex/peopleIndex.jsp").forward(request, response);
+        } else
+            request.getRequestDispatcher("user/userIndex/peopleIndex.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id =(String) request.getSession().getAttribute("userId");
+        String id = (String) request.getSession().getAttribute("userId");
         articleService articleService = new articleService();
         List<ArticleType> list = new ArrayList<>();
         list = articleService.findTypeList(id);
-        if(list.size()>=0){
-            request.setAttribute("ArticleType",list);
-            request.getRequestDispatcher("Article/ArticleType.jsp").forward(request,response);
+        if (list.size() >= 0) {
+            request.setAttribute("ArticleType", list);
+            request.getRequestDispatcher("Article/ArticleType.jsp").forward(request, response);
         }
     }
 }

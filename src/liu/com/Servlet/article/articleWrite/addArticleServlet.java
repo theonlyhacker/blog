@@ -39,8 +39,8 @@ public class addArticleServlet extends HttpServlet {
         String userId = (String) request.getSession().getAttribute("userId");
         articleService articleService = new articleService();
         List<ArticleType> list = articleService.findTypeList(userId);
-        if(list.size()>=0){
-            request.setAttribute("ArticleType",list);
+        if (list.size() >= 0) {
+            request.setAttribute("ArticleType", list);
             request.getRequestDispatcher("Article/addArticle.jsp").forward(request, response);
         }
 

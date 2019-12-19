@@ -27,7 +27,7 @@ public class updateArticleServlet extends HttpServlet {
         article.setContent(content);
 //
         articleService articleService = new articleService();
-        if(articleService.updateArticle(article)>0){
+        if (articleService.updateArticle(article) > 0) {
             request.getRequestDispatcher("user/userIndex/peopleIndex.jsp").forward(request, response);
         }
     }
@@ -35,13 +35,13 @@ public class updateArticleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
 //
-        String userId = (String)request.getSession().getAttribute("userId");
+        String userId = (String) request.getSession().getAttribute("userId");
 //
         articleService articleService = new articleService();
 //
-        if (articleService.findById(id)!=null) {
-            request.setAttribute("article",articleService.findById(id));
-            request.setAttribute("ArticleType",articleService.findTypeList(userId));
+        if (articleService.findById(id) != null) {
+            request.setAttribute("article", articleService.findById(id));
+            request.setAttribute("ArticleType", articleService.findTypeList(userId));
             request.getRequestDispatcher("Article/updateArticle.jsp").forward(request, response);
         }
     }

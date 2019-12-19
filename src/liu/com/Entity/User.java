@@ -10,7 +10,7 @@ public class User {
     private String status;//状态(normal为正常,disable为禁用,admin表示管理员)
     private String registerDate;//注册时间
 
-    public User(){
+    public User() {
     }
 
     public String getUsername() {

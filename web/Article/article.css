@@ -1,4 +1,4 @@
-.ArticleType{
+.ArticleType {
     display: none;
     position: absolute;
     top: 25%;
@@ -7,7 +7,7 @@
     height: auto;
     padding: 10px;
     border: 5px solid gray;
-    background-color:#b3d7ff;
+    background-color: #b3d7ff;
     z-index: 1002;
     overflow: auto;
     text-align: center !important;

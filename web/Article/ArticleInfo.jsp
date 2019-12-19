@@ -49,7 +49,7 @@
                     <button type="button" class="btn btn-outline-secondary">
                         <a href="AllArticleCatalogsServlet?status=youke" style="text-decoration: none;color: #5a6268;">返回</a>
                     </button>
-                        <h3><a href="index" style="text-decoration: none;color:darkcyan">点击注册或登录</a></h3>
+                    <h3><a href="index" style="text-decoration: none;color:darkcyan">点击注册或登录</a></h3>
                 </c:when>
                 <c:otherwise>
                     <button type="button" class="btn btn-outline-secondary"><a href="AllArticleCatalogsServlet"
@@ -127,6 +127,7 @@
             if(msg.length>0){
                 for(var j=0;j<msg.length;j++){
                     $('#
+
 
 
 

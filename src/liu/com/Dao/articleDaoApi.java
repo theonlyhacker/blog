@@ -16,7 +16,7 @@ public interface articleDaoApi {
     //    查找文章类型
     List<ArticleType> findTypeList(String userId);
 
-//    删除文章类型
+    //    删除文章类型
     int delArticleType(String typeId);
 
     //    删除文章

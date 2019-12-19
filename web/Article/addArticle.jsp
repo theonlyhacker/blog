@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -15,16 +15,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         $(function () {
             $("#writeAriticleForm").submit(function () {
                 var title = $("#title").val();
-                if(title == null|| title == ""){
+                if (title == null || title == "") {
                     alert("title不能为空!");
                     return false;
-                }
-                else return true;
+                } else return true;
             })
         })
+
         function save() {
             alert("保存成功!");
-            window.location.href="/peopleindex.jsp";
+            window.location.href = "/peopleindex.jsp";
         }
     </script>
 </head>
@@ -57,7 +57,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div>
             <input type="submit" class="btn btn-outline-secondary" value="提交">
             <button type="button" class="btn btn-outline-secondary" id="save" click="save()">保存</button>
-            <button type="button" class="btn btn-outline-secondary"><a href="main" style="text-decoration: none;color: #5a6268;">返回</a></button>
+            <button type="button" class="btn btn-outline-secondary"><a href="main"
+                                                                       style="text-decoration: none;color: #5a6268;">返回</a>
+            </button>
         </div>
     </div>
 </form>

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 <form action="AllArticleCatalogsServlet" method="post">
-<%--    传入status判断是否为游客登录--%>
+    <%--    传入status判断是否为游客登录--%>
     <input type="hidden" name="status" value="${status}">
     <table class="table">
         <thead class="thead-light">
@@ -21,7 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <th colspan="4" style="text-align: center">文章目录</th>
             <th colspan="1" style="text-align: center">
                 <input type="text" name="searchArticle" id="jiansuo">
-                <button type="submit" class="btn btn-outline-secondary" style="line-height: 1;padding: 0.23rem 0.5rem">检索</button>
+                <button type="submit" class="btn btn-outline-secondary" style="line-height: 1;padding: 0.23rem 0.5rem">
+                    检索
+                </button>
             </th>
         </tr>
         </thead>
@@ -69,18 +71,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </tbody>
     </table>
 </form>
-    <script type="text/javascript">
-        /*function jiansuo() {
-            var guanjianci = $("#jiansuo").val();
-            $.ajax({
-                type:"get",
-                url:"",
-                data:{}
-            })
-        }*/
-        /*$(document).ready(function () {
-            $('#hanggao').bootstrapTable({height: 160});
-        });*/
-    </script>
+<script type="text/javascript">
+    /*function jiansuo() {
+        var guanjianci = $("#jiansuo").val();
+        $.ajax({
+            type:"get",
+            url:"",
+            data:{}
+        })
+    }*/
+    /*$(document).ready(function () {
+        $('#hanggao').bootstrapTable({height: 160});
+    });*/
+</script>
 </body>
 </html>

@@ -43,22 +43,22 @@ public class registerServlet extends HttpServlet {
 //
 //        先判断添加当前用户的谁，是用户本人还是管理员添加 临时变量sta储存status
 //        是否以及存在相同的userName；
-        String sta =(String) request.getSession().getAttribute("status");
+        String sta = (String) request.getSession().getAttribute("status");
 
-        if(null == sta){
+        if (null == sta) {
             sta = "normal";
         }
         Gson gson = new Gson();
-        if (userService.isExistUser(userName)){
+        if (userService.isExistUser(userName)) {
             String errorMsg = "用户名已存在，请重新添加";
             if (sta.equals("admin")) {
-                String exist = gson.toJson("用户名已存在，添加失败",String.class);
+                String exist = gson.toJson("用户名已存在，添加失败", String.class);
                 PrintWriter out = response.getWriter();
                 out.write(exist);
 //                response.sendRedirect("main?errorMsg=" + errorMsg);
                 return;
             } else {
-                request.setAttribute("userName",userName);
+                request.setAttribute("userName", userName);
                 request.setAttribute("errorMsg", errorMsg);
                 request.getRequestDispatcher("loginRegister/register.jsp").forward(request, response);
                 return;
@@ -76,7 +76,7 @@ public class registerServlet extends HttpServlet {
 
 //            管理员添加成功后返回管理员的页面
             if (sta.equals("admin")) {
-                String exist = gson.toJson("添加成功",String.class);
+                String exist = gson.toJson("添加成功", String.class);
                 PrintWriter out = response.getWriter();
                 out.write(exist);
 //            response.sendRedirect("main");

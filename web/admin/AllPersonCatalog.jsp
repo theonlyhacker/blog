@@ -168,15 +168,15 @@
                 html += "tel:<input type='text' name='userTel' value='" + json.tel + "' ><br>";
                 html += "sex:<input type='text' name='sex' value='" + json.sex + "' ><br>";
                 /*本来是打算用复选框搞定但是时间紧迫，还有模糊查询没搞，先这样写着2019.12.13*/
-                html +="<label>sex取值在男,女里取值</label><br>";
+                html += "<label>sex取值在男,女里取值</label><br>";
                 html += "status:<input type='text' name='status' value='" + json.status + "' ><br>";
-                html +="<label>status取值在admin,normal里取值</label><br>";
-                html +="<button type=\"submit\" class=\"btn btn-outline-secondary\">确认</button>\n" +
+                html += "<label>status取值在admin,normal里取值</label><br>";
+                html += "<button type=\"submit\" class=\"btn btn-outline-secondary\">确认</button>\n" +
                     "<button type=\"button\" class=\"btn btn-outline-secondary\" onclick='quxiao()'>取消</button></form>";
                 var div = $('.updateUserTable');
                 div.empty();
                 div.append(html);
-                document.getElementById('updateUserTable').style.display='block';
+                document.getElementById('updateUserTable').style.display = 'block';
 
 
                 /* $.each(data.root,function (idx,item) {
@@ -206,8 +206,9 @@
             })
         })*/
     }
+
     function quxiao() {
-        document.getElementById('updateUserTable').style.display='none';
+        document.getElementById('updateUserTable').style.display = 'none';
     }
 
     function addUser() {

@@ -35,15 +35,15 @@ public class ArticleInfoServlet extends HttpServlet {
 
         articleService articleService = new articleService();
         if (articleService.addReview(reviews) != null) {
-            if(userId.equals(authorId)){
+            if (userId.equals(authorId)) {
                 response.sendRedirect("ArticleCatalogServlet");
-            }
-            else {
+            } else {
                 response.sendRedirect("AllArticleCatalogsServlet");
             }
         }
     }
-//    不用list的原因主要是出现重复，怎么去重都各种重复重复，还是set真香
+
+    //    不用list的原因主要是出现重复，怎么去重都各种重复重复，还是set真香
     Set<Reviews> set = new HashSet<Reviews>();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -53,7 +53,7 @@ public class ArticleInfoServlet extends HttpServlet {
         String userId = (String) request.getSession().getAttribute("userId");
 //        取得访问文章的用户的status
         String sta = request.getParameter("status");
-        if(sta.equals("youke")){
+        if (sta.equals("youke")) {
             userId = "youke";
         }
 //
@@ -63,15 +63,15 @@ public class ArticleInfoServlet extends HttpServlet {
 //
         List<Reviews> reviewsList = articleService.findReviewList(id);
         set.clear();
-        for(int i=0;i<reviewsList.size();i++){
-            set.addAll (articleService.findReviewOnly(reviewsList.get(i).getReviewId()) );
+        for (int i = 0; i < reviewsList.size(); i++) {
+            set.addAll(articleService.findReviewOnly(reviewsList.get(i).getReviewId()));
         }
 //
         if (article != null) {
             request.setAttribute("article", article);
             request.setAttribute("reviewsList", reviewsList);
-            request.setAttribute("commentsList",set);
-            request.setAttribute("userIdd",userId);
+            request.setAttribute("commentsList", set);
+            request.setAttribute("userIdd", userId);
             request.getRequestDispatcher("Article/ArticleInfo.jsp").forward(request, response);
         }
      /*   thisSet.clear();//在请求进来的时候讲set集合清空

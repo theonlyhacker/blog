@@ -1,9 +1,10 @@
-div{
+div {
     color: burlywood;
     font-size: 25px;
     height: 200px;
 }
-.userinput{
+
+.userinput {
     display: block;
     width: auto;
     height: calc(1.5em + 0.75rem + 2px);
