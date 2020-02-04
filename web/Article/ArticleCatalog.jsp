@@ -73,8 +73,9 @@
         </c:forEach>
         <tr>
             <th colspan="5" style="text-align: right">
-                <button type="button" class="btn btn-outline-secondary">
-                    <a href="main" style="text-decoration: none;color: #5a6268">返回</a></button>
+                <%--<button type="button" class="btn btn-outline-secondary">
+                    <a href="main" style="text-decoration: none;color: #5a6268">返回</a></button>--%>
+                <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
             </th>
         </tr>
         </tbody>

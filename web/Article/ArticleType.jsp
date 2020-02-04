@@ -52,9 +52,10 @@
         <button type="button" class="btn btn-outline-secondary canCle">取消</button>
     </div>
     <button type="button" class="btn btn-outline-secondary addType">添加类型</button>
-    <button type="button" class="btn btn-outline-secondary"><a href="main"
+    <%--<button type="button" class="btn btn-outline-secondary"><a href="main"
                                                                style="text-decoration: none;color: #5a6268;">返回</a>
-    </button>
+    </button>--%>
+    <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
 </form>
 
 <script>

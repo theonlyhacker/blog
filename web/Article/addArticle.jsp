@@ -57,9 +57,10 @@
         <div>
             <input type="submit" class="btn btn-outline-secondary" value="提交">
             <button type="button" class="btn btn-outline-secondary" id="save" click="save()">保存</button>
-            <button type="button" class="btn btn-outline-secondary"><a href="main"
+            <%--<button type="button" class="btn btn-outline-secondary"><a href="main"
                                                                        style="text-decoration: none;color: #5a6268;">返回</a>
-            </button>
+            </button>--%>
+            <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
         </div>
     </div>
 </form>

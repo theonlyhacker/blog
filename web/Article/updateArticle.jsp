@@ -39,9 +39,10 @@
         </div>
         <div>
             <input type="submit" class="btn btn-outline-secondary" value="更新">
-            <button type="button" class="btn btn-outline-secondary"><a
+            <%--<button type="button" class="btn btn-outline-secondary"><a
                     href="ArticleCatalogServlet" style="text-decoration: none;color: #5a6268;">返回</a>
-            </button>
+            </button>--%>
+            <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
         </div>
     </div>
 </form>

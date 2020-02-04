@@ -1,7 +1,7 @@
 package liu.com.Entity;
 
 public class ArticleType {
-    private String id;//文章类型id
+    private String idarticletype;//文章类型id
     private String userId;//文章类型的拥有者
     private String typeContent;//文章类型名
     private String registerDate;//注册时间
@@ -9,12 +9,12 @@ public class ArticleType {
     public ArticleType() {
     }
 
-    public String getId() {
-        return id;
+    public String getIdarticletype() {
+        return idarticletype;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdarticletype(String idarticletype) {
+        this.idarticletype = idarticletype;
     }
 
     public String getUserId() {

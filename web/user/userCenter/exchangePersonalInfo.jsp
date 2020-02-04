@@ -44,9 +44,8 @@
         <div style="margin-top: 45%">
             <input type="submit" class="btn btn-outline-secondary" value="提交">
             <button type="button" class="btn btn-outline-secondary" id="save" click="save()">保存</button>
-            <button type="button" class="btn btn-outline-secondary"><a href="personalInfoServlet"
-                                                                       style="text-decoration: none;color: #5a6268;">返回</a>
-            </button>
+            <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
+            <%--<a href="javascript:history.go(-1)">exit2</a>--%>
         </div>
     </div>
 </form>

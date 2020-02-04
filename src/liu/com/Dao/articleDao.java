@@ -64,11 +64,11 @@ public class articleDao implements articleDaoApi {
             st = cn.prepareStatement(sql1);
 //
 //            给文章添加id属性
-            articleType.setId(id.getUUid());
+            articleType.setIdarticletype(id.getUUid());
 //          给文章添加生成时间
             articleType.setRegisterDate(id.date());
 //
-            st.setString(1, articleType.getId());
+            st.setString(1, articleType.getIdarticletype());
             st.setString(2, articleType.getUserId());
             st.setString(3, articleType.getTypeContent());
             st.setString(4, articleType.getRegisterDate());
@@ -100,7 +100,7 @@ public class articleDao implements articleDaoApi {
 //
                 ArticleType articleType = new ArticleType();
 //
-                articleType.setId(typeId);
+                articleType.setIdarticletype(typeId);
                 articleType.setUserId(idUser);
                 articleType.setTypeContent(typeContent);
                 articleType.setRegisterDate(date);

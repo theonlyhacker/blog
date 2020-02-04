@@ -40,21 +40,24 @@
                             href="updateArticleServlet?id=${article.id}"
                             style="text-decoration: none;color: #5a6268;">修改</a>
                     </button>
-                    <button type="button" class="btn btn-outline-secondary"><a href="ArticleCatalogServlet"
+                    <%--<button type="button" class="btn btn-outline-secondary"><a href="ArticleCatalogServlet"
                                                                                style="text-decoration: none;color: #5a6268;">返回</a>
-                    </button>
+                    </button>--%>
+                    <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
                 </c:when>
                 <c:when test="${userIdd == 'youke'}">
                     <p style="color: red">游客您好,想要评论请先注册或登录</p>
-                    <button type="button" class="btn btn-outline-secondary">
+                    <%--<button type="button" class="btn btn-outline-secondary">
                         <a href="AllArticleCatalogsServlet?status=youke" style="text-decoration: none;color: #5a6268;">返回</a>
-                    </button>
+                    </button>--%>
+                    <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
                     <h3><a href="index" style="text-decoration: none;color:darkcyan">点击注册或登录</a></h3>
                 </c:when>
                 <c:otherwise>
-                    <button type="button" class="btn btn-outline-secondary"><a href="AllArticleCatalogsServlet"
+                    <%--<button type="button" class="btn btn-outline-secondary"><a href="AllArticleCatalogsServlet"
                                                                                style="text-decoration: none;color: #5a6268;">返回</a>
-                    </button>
+                    </button>--%>
+                    <button type="button" class="btn btn-outline-secondary" onclick="javascript:history.go(-1)">返回</button>
                 </c:otherwise>
             </c:choose>
         </div>
@@ -109,7 +112,7 @@
                                 <button type="button" class="btn btn-outline-secondary"
                                         onclick="addComments('${review.reviewId}')">提交
                                 </button>
-                                    <%--                                <input type="button" class="btn btn-outline-secondary" onsubmit="test()" value="回复">--%>
+                                    <%--                                <input type="button" class="btn btn-outline-secondary" onsubmit="Test()" value="回复">--%>
                             </div>
                         </th>
                     </tr>
